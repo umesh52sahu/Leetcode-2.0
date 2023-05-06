@@ -1,17 +1,10 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        for(int i=0;i<=nums.length;i++){
-            boolean check=false;
-            for(int j=0;j<nums.length;j++){
-                if(nums[j]==i){
-                    check=true;
-                    break;
-                }
-            }
-            if(check!=true){
-                return i;
-            }
+        int temp=0;
+        for(int i=0;i<nums.length;i++){
+            temp=temp+nums[i];
         }
-        return -1;
+        int n=nums.length;
+        return n*(n+1)/2-temp;
     }
 }
