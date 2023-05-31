@@ -1,7 +1,16 @@
 class Solution {
     public boolean isPowerOfTwo(int n) {
-        if(n <= 0) return false;
-        if(n == 1) return true;
-        return n % 2 == 0 ? isPowerOfTwo(n / 2) : false;
+     
+        return check(n,true);
+    }
+    public static boolean check(int n, boolean istrue){
+        if(n<=0) return false;
+        if(n==1) return true;
+        
+        if(n%2==0){
+             return check(n/2,istrue);
+        } else{
+            return false;
+        }
     }
 }
